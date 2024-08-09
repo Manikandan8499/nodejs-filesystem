@@ -6,7 +6,7 @@ if (!fs.existsSync('directory')){
     fs.mkdirSync('directory');
 }
 
-server.post('/create-file', (req, res) => {
+server.get('/create-file', (req, res) => {
     fs.writeFile(
         `directory/${new Date().toISOString().replace(/[:]/g, '-')}.txt`,
         Date.now().toString(), (err)=>{
